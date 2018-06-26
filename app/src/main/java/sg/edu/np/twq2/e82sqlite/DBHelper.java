@@ -41,6 +41,15 @@ public class DBHelper extends SQLiteOpenHelper {
         db.close();
     }
 
+    public void updateProduct(Product product) {
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_PRODUCTNAME, product.getProductName());
+        values.put(COLUMN_QUANTITY, product.getQuantity());
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.update(TABLE_PRODUCTS,values, COLUMN_ID + " = ?", new String[] { String.valueOf(product.getId()) } );
+        db.close();
+    }
+
     public Product findProduct(String productname) {
         String query = "SELECT * FROM " + TABLE_PRODUCTS + " WHERE "
                 + COLUMN_PRODUCTNAME

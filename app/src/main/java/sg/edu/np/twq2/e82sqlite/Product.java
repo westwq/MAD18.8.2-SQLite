@@ -13,6 +13,12 @@ public class Product {
         quantity = qty;
     }
 
+    public Product(String pn, int qty)
+    {
+        productName = pn;
+        quantity = qty;
+    }
+
     public int getId() {
         return id;
     }
