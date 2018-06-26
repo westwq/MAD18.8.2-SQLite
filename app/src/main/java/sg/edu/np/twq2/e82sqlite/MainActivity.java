@@ -31,6 +31,16 @@ public class MainActivity extends AppCompatActivity {
         quantityBox.setText("");
     }
 
+    //UPDATE
+    public void updateProduct (View view) {
+        DBHelper dbHandler = new DBHelper(this, null, null, 1);
+        int quantity = Integer.parseInt(quantityBox.getText().toString());
+        Product product = new Product(Integer.parseInt(idView.getText().toString()),productBox.getText().toString(), quantity);
+        dbHandler.updateProduct(product);
+        productBox.setText("");
+        quantityBox.setText("");
+    }
+
     //FIND
     public void lookupProduct (View view) {
         DBHelper dbHandler = new DBHelper(this, null, null, 1);

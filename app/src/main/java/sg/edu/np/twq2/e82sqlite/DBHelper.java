@@ -15,7 +15,7 @@ public class DBHelper extends SQLiteOpenHelper {
     public static final String COLUMN_QUANTITY = "quantity";
 
     public DBHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
-        super(context, DATABASE_NAME, factory, DATABASE_VERSION);
+        super(context, DATABASE_NAME, factory, version);
     }
 
     @Override
